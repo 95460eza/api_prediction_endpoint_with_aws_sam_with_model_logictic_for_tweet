@@ -5,7 +5,7 @@ Resources:
   FastAPImodelLogisticlambdafunction1:
     Type: AWS::Serverless::Function
     Properties:
-      Timeout: 10
+      Timeout: 50
       CodeUri: .   #path to where the definition code for the FastAPI application is. Here "." means same folder as this template file!
       Handler: app.handler
       # Assuming that BOTH: 1) The file with our FastAPI app definition code is called app.py AND 2) Ex: We have app_lstm =FastAPI() with Mangum used as handler=Mangum(app_lstm)
