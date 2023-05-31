@@ -25,9 +25,9 @@ Resources:
       Handler: app.handler
       # Assuming that BOTH: 1) The file with our FastAPI app definition code is called app.py AND 2) Ex: We have app_lstm =FastAPI() with Mangum used as handler=Mangum(app_lstm)
       Runtime: python3.10
-      Environment:
-        Variables:
-          MODEL_PATH: /Saved_Trained_Models/model_logistic_shorty.pkl
+      #Environment:
+      #  Variables:
+      #    MODEL_PATH: /Saved_Trained_Models/model_logistic_shorty.pkl
       Events:
         FastAPIRoute:
           Type: Api
