@@ -23,7 +23,8 @@ def process_post_request(data_as_json):
     # Load existing model to do predict with it
     #model_path = os.getenv("MODEL_PATH")
     #model_logistic = joblib.load(model_path)
-    model_logistic = joblib.load(Saved_Trained_Models/model_logistic_shorty.pkl)
+
+    model_logistic = joblib.load(model_logistic_shorty.pkl)
     #model_logistic = joblib.load(model_logistic_shorty.pkl)
     #print(joblib.__version__)
 
