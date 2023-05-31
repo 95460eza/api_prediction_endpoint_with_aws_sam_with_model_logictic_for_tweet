@@ -1,22 +1,18 @@
 
-import joblib
 import json
 import pandas as pd
-import numpy
-#import pytest
+import joblib
+#import numpy
+import fastapi
 from fastapi import FastAPI
+import mangum
 from mangum import Mangum
-
-
-#Run pytest Unit tests here
-#pytest
-
 
 app_logistic = FastAPI()
 
 @app_logistic.get("/")  # The INDEX (main) page of the EndPoint will return the JSON file below (no INPUT needed)
 def index():
-    return {"message": "Hello, new user"}
+    return {"message": "Hello to you, new user"}
 
 
 @app_logistic.post("/predict")
@@ -35,7 +31,7 @@ def process_post_request(data_as_json):
     # Model's probability prediction
     sentiment = model_logistic.predict(df)
 
-    return {  # "message": "Code 200 - POST request processed successfully",
+    return {  "message": "Code 200 - POST request processed successfully",
         "sentiment": sentiment.item()}
 
 
