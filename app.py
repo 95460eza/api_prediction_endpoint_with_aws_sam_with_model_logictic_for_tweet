@@ -26,7 +26,6 @@ def process_post_request(data_as_json):
     #model_logistic = joblib.load(model_path)
 
     model_logistic = joblib.load("model_logistic_shorty.pkl")
-    #model_logistic = joblib.load(model_logistic_shorty.pkl)
     #print(joblib.__version__)
 
     # Make the received input JSON into a dictionary
@@ -36,13 +35,11 @@ def process_post_request(data_as_json):
     df = pd.DataFrame.from_dict(data)
 
     # Model's probability prediction
-    #sentiment = model_logistic.predict(df)
-    dummy_result = list(df.head(1).columns)[0:6]
+    sentiment = model_logistic.predict(df)
 
     return { "message": "Code 200 - POST request processed successfully",
-        #"sentiment": sentiment.item()
-         "sentiment": dummy_result
-              }
+             "sentiment": sentiment.item()
+            }
 
 
 handler = Mangum(app_logistic)
