@@ -1,4 +1,5 @@
 
+import os
 import json
 import pandas as pd
 import joblib
@@ -18,10 +19,12 @@ def index():
 @app_logistic.post("/predict")
 # The function below tells the Endpoint how to calculate predictions from the JSON input received (here a tweet features in format for LSTM)
 def process_post_request(data_as_json):
+    
+    model_path = os.getenv("MODEL_PATH")
 
     # Load existing model to do predict with it
-    #model_logistic = joblib.load("Saved_Trained_Models/model_logistic_shorty.pkl")
-    print(joblib.__version__)
+    model_logistic = joblib.load(model_path)
+    #print(joblib.__version__)
 
     # Make the received input JSON into a dictionary
     data = json.loads(data_as_json)
