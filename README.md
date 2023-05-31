@@ -1,0 +1,1 @@
+# api_prediction_endpoint_with_aws_sam_with_model_logictic_for_tweet
