@@ -23,7 +23,7 @@ jobs:
       # name: Run unit tests - Specify to run unit tests below
       #- run: pip install pytest
       #- run: pip install numpy
-      #- run: python -m pytest
+      - run: python -m pytest
 
       # sam deploy
       - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name logisticmodel --capabilities CAPABILITY_IAM --region eu-north-1
