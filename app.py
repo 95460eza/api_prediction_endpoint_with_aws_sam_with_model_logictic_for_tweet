@@ -20,7 +20,7 @@ def index():
 def process_post_request(data_as_json):
 
     # Load existing model to do predict with it
-    model_logistic = joblib.load("model_logistic_shorty.pkl")
+    #model_logistic = joblib.load("model_logistic_shorty.pkl")
 
     # Make the received input JSON into a dictionary
     data = json.loads(data_as_json)
@@ -29,10 +29,13 @@ def process_post_request(data_as_json):
     df = pd.DataFrame.from_dict(data)
 
     # Model's probability prediction
-    sentiment = model_logistic.predict(df)
+    #sentiment = model_logistic.predict(df)
+    dummy_result = df.head(1)
 
-    return {  "message": "Code 200 - POST request processed successfully",
-        "sentiment": sentiment.item()}
+    return { "message": "Code 200 - POST request processed successfully",
+        #"sentiment": sentiment.item()
+         "sentiment": dummy_result
+              }
 
 
 handler = Mangum(app_logistic)
