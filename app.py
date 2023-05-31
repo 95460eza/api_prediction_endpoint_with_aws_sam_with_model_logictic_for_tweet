@@ -20,7 +20,7 @@ def index():
 def process_post_request(data_as_json):
 
     # Load existing model to do predict with it
-    model_logistic = joblib.load("model_logistic_shorty.pkl")
+    model_logistic = joblib.load("./model_logistic_shorty.pkl")
 
     # Make the received input JSON into a dictionary
     data = json.loads(data_as_json)
