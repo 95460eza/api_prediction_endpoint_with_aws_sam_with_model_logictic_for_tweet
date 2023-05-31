@@ -24,7 +24,7 @@ def process_post_request(data_as_json):
     #model_path = os.getenv("MODEL_PATH")
     #model_logistic = joblib.load(model_path)
 
-    model_logistic = joblib.load(model_logistic_shorty.pkl)
+    model_logistic = joblib.load("model_logistic_shorty.pkl")
     #model_logistic = joblib.load(model_logistic_shorty.pkl)
     #print(joblib.__version__)
 
