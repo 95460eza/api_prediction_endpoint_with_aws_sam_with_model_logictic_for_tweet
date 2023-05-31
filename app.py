@@ -2,6 +2,7 @@
 #import os
 import json
 import pandas as pd
+import sklearn
 import joblib
 #import numpy
 import fastapi
