@@ -7,7 +7,7 @@
 #tensorflow
 #tensorflow==2.10.0
 
-joblib
+joblib==1.2.0
 pytest
 numpy
 pandas
