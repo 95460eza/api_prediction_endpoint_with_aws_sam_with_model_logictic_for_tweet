@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  FastAPImodelLogisticlambdafunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Timeout: 900
+      CodeUri: FastAPImodelLogisticlambdafunction
+      Handler: app.handler
+      Runtime: python3.10
+      Events:
+        FastAPIRoute:
+          Type: Api
+          Properties:
+            Path: /predict
+            Method: POST
+    Metadata:
+      SamResourceId: FastAPImodelLogisticlambdafunction

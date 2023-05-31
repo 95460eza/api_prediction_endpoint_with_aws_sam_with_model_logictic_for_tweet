@@ -1,0 +1,14 @@
+#math installed already in base python
+#json installed already in base python
+
+#uvicorn needed for cloud deploy???
+#wheel
+#tensorflow
+#tensorflow==2.10.0
+
+joblib
+pytest
+numpy
+pandas
+fastapi
+mangum

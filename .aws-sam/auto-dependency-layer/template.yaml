@@ -1,0 +1,48 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  FastAPImodelLogisticlambdafunction1:
+    Type: AWS::Serverless::Function
+    Properties:
+      Timeout: 10
+      CodeUri: FastAPImodelLogisticlambdafunction1
+      Handler: app.handler
+      Runtime: python3.10
+      Events:
+        FastAPIRoute:
+          Type: Api
+          Properties:
+            Path: /
+            Method: GET
+      Layers:
+      - Fn::GetAtt:
+        - AwsSamAutoDependencyLayerNestedStack
+        - Outputs.FastAPImodelLogisticlambdafunction191421df9DepLayer
+    Metadata:
+      SamResourceId: FastAPImodelLogisticlambdafunction1
+  FastAPImodelLogisticlambdafunction2:
+    Type: AWS::Serverless::Function
+    Properties:
+      Timeout: 900
+      CodeUri: FastAPImodelLogisticlambdafunction2
+      Handler: app.handler
+      Runtime: python3.10
+      Events:
+        FastAPIRoute:
+          Type: Api
+          Properties:
+            Path: /predict
+            Method: POST
+      Layers:
+      - Fn::GetAtt:
+        - AwsSamAutoDependencyLayerNestedStack
+        - Outputs.FastAPImodelLogisticlambdafunction2cb42408cDepLayer
+    Metadata:
+      SamResourceId: FastAPImodelLogisticlambdafunction2
+  AwsSamAutoDependencyLayerNestedStack:
+    DeletionPolicy: Delete
+    Metadata:
+      CreatedBy: AWS SAM CLI sync command
+    Properties:
+      TemplateURL: D:\ANALYTICS - Continuous Education\OpenClassrooms\Projet 7 - Detectez_Bad_Buzz_via_Deep_Learning\api_prediction_endpoint_with_aws_sam_with_model_logictic_for_tweet\.aws-sam\auto-dependency-layer\adl_nested_template.yaml
+    Type: AWS::CloudFormation::Stack

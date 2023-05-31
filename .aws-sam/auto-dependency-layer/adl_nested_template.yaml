@@ -1,0 +1,36 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AWS SAM CLI Nested Stack for Auto Dependency Layer Creation
+Metadata:
+  SamCliInfo: 1.84.0
+  key: AWS SAM CLI sync command
+Outputs:
+  FastAPImodelLogisticlambdafunction191421df9DepLayer:
+    Value:
+      Ref: FastAPImodelLogisticlambdafunction191421df9DepLayer
+  FastAPImodelLogisticlambdafunction2cb42408cDepLayer:
+    Value:
+      Ref: FastAPImodelLogisticlambdafunction2cb42408cDepLayer
+Resources:
+  FastAPImodelLogisticlambdafunction191421df9DepLayer:
+    Metadata:
+      CreatedBy: AWS SAM CLI sync command
+    Properties:
+      CompatibleRuntimes:
+      - python3.10
+      ContentUri: D:\ANALYTICS - Continuous Education\OpenClassrooms\Projet 7 - Detectez_Bad_Buzz_via_Deep_Learning\api_prediction_endpoint_with_aws_sam_with_model_logictic_for_tweet\.aws-sam\auto-dependency-layer\FastAPImodelLogisticlambdafunction191421df9DepLayer
+      Description: Auto created layer for dependencies of function FastAPImodelLogisticlambdafunction1
+      LayerName: logisticmodeld675063f-FastAPImodelLogisticla91421df9-DepLayer
+      RetentionPolicy: Delete
+    Type: AWS::Serverless::LayerVersion
+  FastAPImodelLogisticlambdafunction2cb42408cDepLayer:
+    Metadata:
+      CreatedBy: AWS SAM CLI sync command
+    Properties:
+      CompatibleRuntimes:
+      - python3.10
+      ContentUri: D:\ANALYTICS - Continuous Education\OpenClassrooms\Projet 7 - Detectez_Bad_Buzz_via_Deep_Learning\api_prediction_endpoint_with_aws_sam_with_model_logictic_for_tweet\.aws-sam\auto-dependency-layer\FastAPImodelLogisticlambdafunction2cb42408cDepLayer
+      Description: Auto created layer for dependencies of function FastAPImodelLogisticlambdafunction2
+      LayerName: logisticmodeld675063f-FastAPImodelLogisticlacb42408c-DepLayer
+      RetentionPolicy: Delete
+    Type: AWS::Serverless::LayerVersion
+Transform: AWS::Serverless-2016-10-31

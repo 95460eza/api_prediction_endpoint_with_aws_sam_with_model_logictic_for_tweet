@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  FastAPImodelLogisticlambdafunction1:
+    Type: AWS::Serverless::Function
+    Properties:
+      Timeout: 10
+      CodeUri: .   #path to where the definition code for the FastAPI application is. Here "." means same folder as this template file!
+      Handler: app.handler
+      # Assuming that BOTH: 1) The file with our FastAPI app definition code is called app.py AND 2) Ex: We have app_lstm =FastAPI() with Mangum used as handler=Mangum(app_lstm)
+      Runtime: python3.10
+      Events:
+        FastAPIRoute:
+          Type: Api
+          Properties:
+            Path: /
+            Method: GET
+
+  FastAPImodelLogisticlambdafunction2:
+    Type: AWS::Serverless::Function
+    Properties:
+      Timeout: 900
+      CodeUri: .   #path to where the definition code for the FastAPI application is. Here "." means same folder as this template file!
+      Handler: app.handler
+      # Assuming that BOTH: 1) The file with our FastAPI app definition code is called app.py AND 2) Ex: We have app_lstm =FastAPI() with Mangum used as handler=Mangum(app_lstm)
+      Runtime: python3.10
+      Events:
+        FastAPIRoute:
+          Type: Api
+          Properties:
+            Path: /predict
+            Method: POST
