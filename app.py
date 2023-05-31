@@ -19,14 +19,12 @@ def index():
 @app_logistic.post("/predict")
 # The function below tells the Endpoint how to calculate predictions from the JSON input received (here a tweet features in format for LSTM)
 def process_post_request(data_as_json):
-    
-
 
     # Load existing model to do predict with it
     #model_path = os.getenv("MODEL_PATH")
     #model_logistic = joblib.load(model_path)
     #model_logistic = joblib.load(/Saved_Trained_Models/model_logistic_shorty.pkl)
-    model_logistic = joblib.load(/model_logistic_shorty.pkl)
+    model_logistic = joblib.load(model_logistic_shorty.pkl)
     #print(joblib.__version__)
 
     # Make the received input JSON into a dictionary
@@ -36,7 +34,7 @@ def process_post_request(data_as_json):
     df = pd.DataFrame.from_dict(data)
 
     # Model's probability prediction
-    #sentiment = model_logistic.predict(df)
+    sentiment = model_logistic.predict(df)
     dummy_result = list(df.head(1).columns)[0:6]
 
     return { "message": "Code 200 - POST request processed successfully",
