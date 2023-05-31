@@ -21,6 +21,7 @@ def process_post_request(data_as_json):
 
     # Load existing model to do predict with it
     #model_logistic = joblib.load("Saved_Trained_Models/model_logistic_shorty.pkl")
+    print(joblib.__version__)
 
     # Make the received input JSON into a dictionary
     data = json.loads(data_as_json)
