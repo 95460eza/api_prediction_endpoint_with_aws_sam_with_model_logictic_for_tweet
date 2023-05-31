@@ -34,7 +34,7 @@ def process_post_request(data_as_json):
     df = pd.DataFrame.from_dict(data)
 
     # Model's probability prediction
-    sentiment = model_logistic.predict(df)
+    #sentiment = model_logistic.predict(df)
     dummy_result = list(df.head(1).columns)[0:6]
 
     return { "message": "Code 200 - POST request processed successfully",
