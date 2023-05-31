@@ -27,7 +27,7 @@ Resources:
       Runtime: python3.10
       Environment:
         Variables:
-          MODEL_PATH: ./Saved_Trained_Models/model_logistic_shorty.pkl
+          MODEL_PATH: /Saved_Trained_Models/model_logistic_shorty.pkl
       Events:
         FastAPIRoute:
           Type: Api
