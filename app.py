@@ -37,8 +37,9 @@ def process_post_request(data_as_json):
     # Model's probability prediction
     sentiment = model_logistic.predict(df)
 
-    return { "message": "Code 200 - POST request processed successfully",
-             "sentiment": sentiment.item()
+    return { "Status": "200 - POST request SUCCESS",
+             "Prediction": "0= Negative and 1= Positive",
+             "Tweet_sentiment": sentiment.item()
             }
 
 
